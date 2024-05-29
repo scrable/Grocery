@@ -1,0 +1,28 @@
+
+
+
+examples: 
+GET http://localhost:8080/v2/inventory/list/consumed?limit=1 
+response: [{"inventory_id":1,"fridge_id":1,"ingredient_id":1,"expiration_date":"2004-05-23T14:25:10.000Z","quantity":344,"unit":"stest","price":12,"state":"consumed"}]
+
+
+POST http://localhost:8080/v2/users/kev
+body:
+{
+	"fridge_id" : "1",
+	"role": "student"
+}
+
+response: {"affectedRows":1,"insertId":8,"warningStatus":0}
+
+POST http://localhost:8080/v2/fridges
+body:
+{
+	"pin": "1",
+	"serial_number": "1"
+}
+{"affectedRows":1,"insertId":3,"warningStatus":0}
+
+DELETE http://localhost:8080/v2/users/kevin
+
+response: OK

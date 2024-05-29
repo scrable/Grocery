@@ -1,0 +1,39 @@
+body {
+  padding-top: 56px;
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.masthead {
+  padding: 6em 0;
+  background-image: url('https://res.cloudinary.com/dg5ir1kvd/image/fetch/fl_advanced_resize%2Cc_limit%2Cw_767/https://www.ccu.edu/blogs/cags/uploads/2014/computer-information-technology-code-blue-background.jpg%3Fv%3D1558371938762');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.masthead-heading {
+  color:#ffa835;
+  margin-top: -0.2em;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 6em;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.masthead-heading,
+.masthead-intro {
+  text-align: center;
+}

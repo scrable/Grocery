@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html style="height:100%">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{{title}}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+.drawer-container {
+display: flex;
+flex-direction: row;
+height: 100vh;
+overflow: hidden;
+}
+.drawer-app-content {
+flex: auto;
+overflow: auto;
+}
+.top-app-bar-fix-adjust {
+display: flex;
+width: 100%;
+}
+.mdc-drawer--dismissible {
+top: auto;
+}
+  </style>
+</head>
+<body style="height:100%; overflow-y:hidden">
+  <div id="react-root" style="display:flex; height:100%"></div>
+  <script src="horizontal-prototype_meal-plans-view.js"></script>
+</body>
+</html>

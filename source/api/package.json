@@ -1,0 +1,36 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start-watch": "db-migrate up --force-exit && nodemon --watch . app.js",
+    "start": "db-migrate up --force-exit && node app.js",
+    "test": "ava",
+    "test-watch": "ava --watch"
+  },
+  "author": "Team 103",
+  "license": "MIT",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "ava": "^3.7.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "db-migrate": "^0.11.10",
+    "db-migrate-mysql": "^2.1.1",
+    "express": "^4.17.1",
+    "mariadb": "^2.3.1",
+    "node-fetch": "^2.6.0",
+    "uuid": "^8.0.0",
+    "wait-port": "^0.2.7",
+    "async": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-ava": "^10.2.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.4.0",
+    "nodemon": "^2.0.3"
+  }
+}

@@ -1,0 +1,40 @@
+# docker-compose.yml
+version: "3"
+
+services:
+  node-parcel:
+    image: "node:12.15.0"
+    user: "node"
+    environment:
+      NODE_ENV: "development"
+    working_dir: /home/node/app/
+    volumes:
+      - .:/home/node/app/
+      - ./node_modules/:/home/node/app/node_modules/:ro
+    command: "npm run build-watch"
+  node-ava:
+    depends_on:
+      - "node-nodemon"
+    image: "node:12.15.0"
+    user: "node"
+    environment:
+      NODE_ENV: "development"
+    working_dir: /home/node/app/
+    volumes:
+      - .:/home/node/app/
+      - ./node_modules/:/home/node/app/node_modules/:ro
+    command: "npm run test-watch"
+  node-nodemon:
+    depends_on:
+      - "node-parcel"
+    image: "node:12.15.0"
+    ports:
+      - "9080:80"
+      - "9443:443"
+    environment:
+      NODE_ENV: "development"
+    working_dir: /home/node/app/
+    volumes:
+      - .:/home/node/app/:ro
+      - ./node_modules/:/home/node/app/node_modules/:ro
+    command: "npm run start-watch"

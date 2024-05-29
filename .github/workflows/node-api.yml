@@ -1,0 +1,30 @@
+name: Node.js - api
+
+on:
+  push:
+    paths:
+      - '.github/workflows/node-api.yml'
+      - 'source/api/*'
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+    paths:
+      - '.github/workflows/node-api.yml'
+      - 'source/api/*'
+  check_run:
+    types: [created, rerequested, requested_action]
+    paths:
+      - '.github/workflows/node-api.yml'
+      - 'source/api/*'
+
+jobs:
+  api-ci:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - run: npm install
+        working-directory: source/api/
+      - run: npm test
+        working-directory: source/api/
